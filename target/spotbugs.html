@@ -1,0 +1,553 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		Bankprojekt</p>
+      <p>SpotBugs version: 4.8.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\classes</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>451 lines of code analyzed,
+	in 13 classes, 
+	in 4 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">2</td>
+            <td align="right">4.43</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">15</td>
+            <td align="right">33.26</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>17</b>
+            </td>
+            <td align="right">
+               <b>37.69</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">12</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">3</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>17</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e16');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Geldbetrag at new bankprojekt.verarbeitung.Geldbetrag(double) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e16" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Geldbetrag<br/>In method new bankprojekt.verarbeitung.Geldbetrag(double)<br/>At Geldbetrag.java:[line 33]<br/>At Geldbetrag.java:[line 33]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e30');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Geldbetrag at new bankprojekt.verarbeitung.Geldbetrag(double, Waehrung) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e30" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Geldbetrag<br/>In method new bankprojekt.verarbeitung.Geldbetrag(double, Waehrung)<br/>At Geldbetrag.java:[line 45]<br/>At Geldbetrag.java:[line 45]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e56');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Girokonto at new bankprojekt.verarbeitung.Girokonto(Kunde, long, Geldbetrag) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e56" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Girokonto<br/>In method new bankprojekt.verarbeitung.Girokonto(Kunde, long, Geldbetrag)<br/>At Girokonto.java:[line 40]<br/>At Girokonto.java:[line 40]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e70');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Konto at new bankprojekt.verarbeitung.Konto() will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e70" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Konto<br/>In method new bankprojekt.verarbeitung.Konto()<br/>At Konto.java:[line 72]<br/>At Konto.java:[line 72]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e84');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Konto at new bankprojekt.verarbeitung.Konto(Kunde, long) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e84" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Konto<br/>In method new bankprojekt.verarbeitung.Konto(Kunde, long)<br/>At Konto.java:[line 60]<br/>At Konto.java:[line 60]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e150');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Kunde at new bankprojekt.verarbeitung.Kunde() will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e150" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Kunde<br/>In method new bankprojekt.verarbeitung.Kunde()<br/>At Kunde.java:[line 55]<br/>At Kunde.java:[line 55]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e165');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Kunde at new bankprojekt.verarbeitung.Kunde(String, String, String, String) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e165" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Kunde<br/>In method new bankprojekt.verarbeitung.Kunde(String, String, String, String)<br/>At Kunde.java:[line 108]<br/>At Kunde.java:[line 108]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e179');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Kunde at new bankprojekt.verarbeitung.Kunde(String, String, String, LocalDate) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e179" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Kunde<br/>In method new bankprojekt.verarbeitung.Kunde(String, String, String, LocalDate)<br/>At Kunde.java:[line 69]<br/>At Kunde.java:[line 69]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e205');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Sparbuch at new bankprojekt.verarbeitung.Sparbuch(Kunde, long) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e205" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Sparbuch<br/>In method new bankprojekt.verarbeitung.Sparbuch(Kunde, long)<br/>At Sparbuch.java:[line 63]<br/>At Sparbuch.java:[line 63]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e219');">
+            <td>
+               <span class="priority-2">CT</span>
+            </td>
+            <td>Exception thrown in class bankprojekt.verarbeitung.Sparbuch at new bankprojekt.verarbeitung.Sparbuch(Kunde, long, Kalender) will leave the constructor. The object under construction remains partially initialized and may be vulnerable to Finalizer attacks.</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e219" style="display: none;">
+                  <a href="#CT_CONSTRUCTOR_THROW">Bug type CT_CONSTRUCTOR_THROW (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Sparbuch<br/>In method new bankprojekt.verarbeitung.Sparbuch(Kunde, long, Kalender)<br/>At Sparbuch.java:[line 77]<br/>At Sparbuch.java:[line 77]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e193');">
+            <td>
+               <span class="priority-2">Eq</span>
+            </td>
+            <td>bankprojekt.verarbeitung.Kunde defines compareTo(Kunde) and uses Object.equals()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e193" style="display: none;">
+                  <a href="#EQ_COMPARETO_USE_OBJECT_EQUALS">Bug type EQ_COMPARETO_USE_OBJECT_EQUALS (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Kunde<br/>In method bankprojekt.verarbeitung.Kunde.compareTo(Kunde)<br/>At Kunde.java:[line 201]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e44');">
+            <td>
+               <span class="priority-1">HE</span>
+            </td>
+            <td>bankprojekt.verarbeitung.Geldbetrag defines equals and uses Object.hashCode()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e44" style="display: none;">
+                  <a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Geldbetrag<br/>In method bankprojekt.verarbeitung.Geldbetrag.equals(Object)<br/>At Geldbetrag.java:[lines 139-141]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e233');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in spielereien.KontenSpielereien.main(String[]): new java.util.Scanner(InputStream)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e233" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class spielereien.KontenSpielereien<br/>In method spielereien.KontenSpielereien.main(String[])<br/>Called method new java.util.Scanner(InputStream)<br/>At KontenSpielereien.java:[line 32]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e98');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>bankprojekt.verarbeitung.Konto.getInhaber() may expose internal representation by returning Konto.inhaber</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e98" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Konto<br/>In method bankprojekt.verarbeitung.Konto.getInhaber()<br/>Field bankprojekt.verarbeitung.Konto.inhaber<br/>At Konto.java:[line 102]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e114');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new bankprojekt.verarbeitung.Konto(Kunde, long) may expose internal representation by storing an externally mutable object into Konto.inhaber</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e114" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Konto<br/>In method new bankprojekt.verarbeitung.Konto(Kunde, long)<br/>Field bankprojekt.verarbeitung.Konto.inhaber<br/>Local variable named inhaber<br/>At Konto.java:[line 61]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e132');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>bankprojekt.verarbeitung.Konto.setInhaber(Kunde) may expose internal representation by storing an externally mutable object into Konto.inhaber</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e132" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class bankprojekt.verarbeitung.Konto<br/>In method bankprojekt.verarbeitung.Konto.setInhaber(Kunde)<br/>Field bankprojekt.verarbeitung.Konto.inhaber<br/>Local variable named kinh<br/>At Konto.java:[line 116]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e248');">
+            <td>
+               <span class="priority-2">SF</span>
+            </td>
+            <td>Switch statement found in spielereien.KontenSpielereien.main(String[]) where default case is missing</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e248" style="display: none;">
+                  <a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+                  <br/>In class spielereien.KontenSpielereien<br/>In method spielereien.KontenSpielereien.main(String[])<br/>At KontenSpielereien.java:[lines 35-50]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="CT_CONSTRUCTOR_THROW">CT_CONSTRUCTOR_THROW: Be wary of letting constructors throw exceptions.</a>
+      </h2>
+      
+            <p>Classes that throw exceptions in their constructors are vulnerable to Finalizer attacks</p>
+
+            <p>A finalizer attack can be prevented, by declaring the class final, using an empty finalizer declared as final, or by a clever use of a private constructor.</p>
+
+            <p>See <a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ11-J.+Be+wary+of+letting+constructors+throw+exceptions"><code>SEI CERT Rule OBJ-11</code></a>
+            for more information.
+            </p>
+            
+    <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion,
+and will assume that the default platform encoding is suitable. This will cause the application
+behavior to vary between platforms. Use an alternative API and specify a charset name or Charset
+object explicitly.</p>
+
+      <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="EQ_COMPARETO_USE_OBJECT_EQUALS">EQ_COMPARETO_USE_OBJECT_EQUALS: Class defines compareTo(...) and uses Object.equals()</a>
+      </h2>
+
+  <p> This class defines a <code>compareTo(...)</code> method but inherits its
+  <code>equals()</code> method from <code>java.lang.Object</code>.
+    Generally, the value of compareTo should return zero if and only if
+    equals returns true. If this is violated, weird and unpredictable
+    failures will occur in classes such as PriorityQueue.
+    In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    while in Java 6 it uses the equals method.</p>
+
+<p>From the JavaDoc for the compareTo method in the Comparable interface:
+<blockquote>
+It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+Generally speaking, any class that implements the Comparable interface and violates this condition
+should clearly indicate this fact. The recommended language
+is "Note: this class has a natural ordering that is inconsistent with equals."
+</blockquote></p>
+
+    <h2>
+         <a name="HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode()</a>
+      </h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>, and inherits the implementation of
+  <code>hashCode()</code> from <code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+<p>If you don't think instances of this class will ever be inserted into a HashMap/HashTable,
+the recommended <code>hashCode</code> implementation to use is:</p>
+<pre><code>public int hashCode() {
+    assert false : "hashCode not designed";
+    return 42; // any arbitrary constant will do
+}
+</code></pre>
+
+    <h2>
+         <a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+      </h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    </body>
+</html>

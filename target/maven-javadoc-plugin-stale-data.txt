@@ -1,0 +1,61 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/eladk/.m2/repository/org/decimal4j/decimal4j/1.0.3/decimal4j-1.0.3.jar;C:/Users/eladk/.m2/repository/org/mockito/mockito-core/5.15.2/mockito-core-5.15.2.jar;C:/Users/eladk/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar;C:/Users/eladk/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-controls/23/javafx-controls-23.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-controls/23/javafx-controls-23-win.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-graphics/23/javafx-graphics-23.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-graphics/23/javafx-graphics-23-win.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-base/23/javafx-base-23.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-base/23/javafx-base-23-win.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-fxml/25-ea+21/javafx-fxml-25-ea+21.jar;C:/Users/eladk/.m2/repository/org/openjfx/javafx-fxml/25-ea+21/javafx-fxml-25-ea+21-win.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+22
+-sourcepath
+'C:/Users/eladk/Documents/ela documents/Studium/Coding/Bankprojekt/src/main/java;C:/Users/eladk/Documents/ela documents/Studium/Coding/Bankprojekt/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/eladk/Documents/ela documents/Studium/Coding/Bankprojekt/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Bankprojekt 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Bankprojekt 0.0.1-SNAPSHOT API'
+bankprojekt.geld
+bankprojekt.nuetzliches
+bankprojekt.verarbeitung
+spielereien
+C:\Users\eladk\.m2\repository\org\decimal4j\decimal4j\1.0.3\decimal4j-1.0.3.jar = 1745962341606
+C:\Users\eladk\.m2\repository\org\mockito\mockito-core\5.15.2\mockito-core-5.15.2.jar = 1747634913803
+C:\Users\eladk\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar = 1747634914672
+C:\Users\eladk\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar = 1747634913860
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-controls\23\javafx-controls-23.jar = 1748770064950
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-controls\23\javafx-controls-23-win.jar = 1748770067526
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-graphics\23\javafx-graphics-23.jar = 1748770065160
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-graphics\23\javafx-graphics-23-win.jar = 1748770069483
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-base\23\javafx-base-23.jar = 1748770064975
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-base\23\javafx-base-23-win.jar = 1748770065819
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-fxml\25-ea+21\javafx-fxml-25-ea+21.jar = 1751740500531
+C:\Users\eladk\.m2\repository\org\openjfx\javafx-fxml\25-ea+21\javafx-fxml-25-ea+21-win.jar = 1751740500605
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\src\main\java = 1752751016692
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\generated-sources\annotations = 1752752993859
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\allclasses-index.html = 1752753198755
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\allpackages-index.html = 1752753198759
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\element-list = 1752753198603
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\help-doc.html = 1752753198801
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\index-all.html = 1752753198789
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\index.html = 1752753198734
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\member-search-index.js = 1752753198765
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\module-search-index.js = 1752753198761
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\overview-summary.html = 1752753198795
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\overview-tree.html = 1752753198729
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\package-search-index.js = 1752753198763
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\search.html = 1752753198792
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\serialized-form.html = 1752753198657
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\tag-search-index.js = 1752753198767
+C:\Users\eladk\Documents\ela documents\Studium\Coding\Bankprojekt\target\reports\apidocs\type-search-index.js = 1752753198764

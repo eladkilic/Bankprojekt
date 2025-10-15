@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"bankprojekt.geld"},{"l":"bankprojekt.nuetzliches"},{"l":"bankprojekt.verarbeitung"},{"l":"spielereien"}];updateSearchResults();

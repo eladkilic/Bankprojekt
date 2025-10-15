@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Girokonto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bankprojekt</a> &gt; <a href="index.source.html" class="el_package">bankprojekt.verarbeitung</a> &gt; <span class="el_source">Girokonto.java</span></div><h1>Girokonto.java</h1><pre class="source lang-java linenums">package bankprojekt.verarbeitung;
+
+import bankprojekt.geld.Waehrung;
+
+/**
+ * Ein Girokonto, d.h. ein Konto mit einem Dispo und der Fähigkeit,
+ * Überweisungen zu senden und zu empfangen.
+ * Grundsätzlich sind Überweisungen und Abhebungen möglich bis
+ * zu einem Kontostand von -this.dispo
+ * @author Doro
+ *
+ */
+public class Girokonto extends UeberweisungsfaehigesKonto{
+	/**
+	 * Wert, bis zu dem das Konto überzogen werden darf
+	 */
+	private Geldbetrag dispo;
+
+	/**
+	 * erzeugt ein leeres, nicht gesperrtes Standard-Girokonto
+	 * von Max MUSTERMANN
+	 */
+	public Girokonto()
+	{
+<span class="fc" id="L25">		super(Kunde.MUSTERMANN, 99887766);</span>
+<span class="fc" id="L26">		this.dispo = new Geldbetrag(500);</span>
+<span class="fc" id="L27">	}</span>
+	
+	/**
+	 * erzeugt ein Girokonto mit den angegebenen Werten
+	 * @param inhaber Kontoinhaber
+	 * @param nummer Kontonummer
+	 * @param dispo Dispo
+	 * @throws IllegalArgumentException wenn der inhaber null ist oder der angegebene dispo negativ bzw. NaN ist
+	 */
+	public Girokonto(Kunde inhaber, long nummer, Geldbetrag dispo)
+	{
+<span class="nc" id="L38">		super(inhaber, nummer);</span>
+<span class="nc bnc" id="L39" title="All 4 branches missed.">		if(dispo == null || dispo.isNegativ())</span>
+<span class="nc" id="L40">			throw new IllegalArgumentException(&quot;Der Dispo ist nicht gültig!&quot;);</span>
+<span class="nc" id="L41">		this.dispo = dispo;</span>
+<span class="nc" id="L42">	}</span>
+	
+	@Override
+	public void waehrungswechsel(Waehrung neu) {
+<span class="fc" id="L46">		super.waehrungswechsel(neu);</span>
+<span class="fc" id="L47">		this.dispo = dispo.umrechnen(neu);</span>
+<span class="fc" id="L48">	}</span>
+	
+	/**
+	 * liefert den Dispo
+	 * @return Dispo von this
+	 */
+	public Geldbetrag getDispo() {
+<span class="fc" id="L55">		return dispo;</span>
+	}
+
+	/**
+	 * setzt den Dispo neu
+	 * @param dispo muss größer sein als 0
+	 * @throws IllegalArgumentException wenn dispo negativ bzw. NaN ist
+	 */
+	public void setDispo(Geldbetrag dispo) {
+<span class="nc bnc" id="L64" title="All 4 branches missed.">		if(dispo == null || dispo.isNegativ())</span>
+<span class="nc" id="L65">			throw new IllegalArgumentException(&quot;Der Dispo ist nicht gültig!&quot;);</span>
+<span class="nc" id="L66">		this.dispo = dispo;</span>
+<span class="nc" id="L67">	}</span>
+	
+	@Override
+    public boolean ueberweisungAbsenden(Geldbetrag betrag, 
+    		String empfaenger, long nachKontonr, 
+    		long nachBlz, String verwendungszweck) 
+    				throws GesperrtException 
+    {
+<span class="nc bnc" id="L75" title="All 2 branches missed.">      if (this.isGesperrt())</span>
+<span class="nc" id="L76">            throw new GesperrtException(this.getKontonummer());</span>
+<span class="nc bnc" id="L77" title="All 8 branches missed.">        if (betrag == null || betrag.isNegativ()|| empfaenger == null || verwendungszweck == null)</span>
+<span class="nc" id="L78">            throw new IllegalArgumentException(&quot;Parameter fehlerhaft&quot;);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (!getKontostand().plus(dispo).minus(betrag).isNegativ())</span>
+        {
+<span class="nc" id="L81">            setKontostand(getKontostand().minus(betrag));</span>
+<span class="nc" id="L82">            return true;</span>
+        }
+        else
+<span class="nc" id="L85">        	return false;</span>
+    }
+
+    @Override
+    public void ueberweisungEmpfangen(Geldbetrag betrag, String vonName, long vonKontonr, long vonBlz, String verwendungszweck)
+    {
+<span class="nc bnc" id="L91" title="All 8 branches missed.">        if (betrag == null || betrag.isNegativ()|| vonName == null || verwendungszweck == null)</span>
+<span class="nc" id="L92">            throw new IllegalArgumentException(&quot;Parameter fehlerhaft&quot;);</span>
+<span class="nc" id="L93">        setKontostand(getKontostand().plus(betrag));</span>
+<span class="nc" id="L94">    }</span>
+    
+    @Override
+    public String toString()
+    {
+<span class="nc" id="L99">    	String ausgabe = &quot;-- GIROKONTO --&quot; + System.lineSeparator() +</span>
+<span class="nc" id="L100">    	super.toString()</span>
+<span class="nc" id="L101">    	+ &quot;Dispo: &quot; + this.dispo + System.lineSeparator();</span>
+<span class="nc" id="L102">    	return ausgabe;</span>
+    }
+
+	@Override
+	public boolean abheben(Geldbetrag betrag) throws GesperrtException{
+<span class="nc bnc" id="L107" title="All 4 branches missed.">		if (betrag == null || betrag.isNegativ()) {</span>
+<span class="nc" id="L108">			throw new IllegalArgumentException(&quot;Betrag ungültig&quot;);</span>
+		}
+<span class="nc bnc" id="L110" title="All 2 branches missed.">		if(this.isGesperrt())</span>
+<span class="nc" id="L111">			throw new GesperrtException(this.getKontonummer());</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">		if (!getKontostand().plus(dispo).minus(betrag).isNegativ())</span>
+		{
+<span class="nc" id="L114">			setKontostand(getKontostand().minus(betrag));</span>
+<span class="nc" id="L115">			return true;</span>
+		}
+		else
+<span class="nc" id="L118">			return false;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
