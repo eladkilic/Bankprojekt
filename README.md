@@ -8,7 +8,7 @@ Ein Java-Bankprojekt entwickelt im Studium zur Verwaltung von Konten, Kunden und
 ## How to Run
 1. Projekt klonen: `git clone https://github.com/eladkilic/Bankprojekt.git`
 2. In IDE importieren (Eclipse/IntelliJ)
-3. Main Klasse: `KontoStarter.java` ausführen
+3. Main Klasse: `oberflaeche/KontoStarter.java` ausführen
 
 ## Technologien
 - Java
